@@ -41,11 +41,19 @@
 // console.log(album.likeAndDislike());
 
 class User {
-  constructor(firstName, lastName, country, age, poid) {
+  constructor(firstName, lastName, country, age, poids) {
     this.firstName = firstName
     this.lastName = lastName
     this.country = country
     this.age = age
+    this.poids = poids
+    
+  }
+  addKilo(plat){
+        if (plat.calories >1000){
+          this.poids+= 1
+        }
+
   }
 }
 class Plats {
@@ -53,17 +61,30 @@ class Plats {
     this.name = name
     this.type = type
     this.calories = 0
+    
   }
-  addCalories() {
+  addCalories(){
     this.calories = 200
+    
+  }
+  kebab() {
+    this.calories = 2000
   }
 
+
 }
-const userOne = new User("Waloche", "white", "France", 32) 
+const userOne = new User("Waloche", "white", "France", 32, 69) 
+
 console.log(userOne);
-const userTwo = new User("Jean-MichMich", "Roberto", "Bresil", 5) 
+const userTwo = new User("Jean-MichMich", "Roberto", "Bresil", 5, 109) 
 console.log(userTwo);
-const userThree = new User("Robert-Hubert", "Vincent", "Italie", 20) 
+const userThree = new User("Robert-Hubert", "Vincent", "Italie", 20, 89) 
 console.log(userThree);
-const userFour = new User("Blaize","Alaize", "Canada", 32) 
+const userFour = new User("Blaize","Alaize", "Canada", 32, 49) 
 console.log(userFour);
+const kebab = new Plats("Kebab", "Danger de mort")
+kebab.kebab()
+userTwo.addKilo(kebab)
+console.log(userTwo);
+
+
