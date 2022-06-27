@@ -15,33 +15,18 @@ class Tv {
       }
 
     }
-    // volumeUp = (volume) =>{
-    //      if (this.volume + volume <= 100 ) {
-    //         this.volume += volume
-    //     } else {
-    //         this.volume = 100
-    //     }
-    // }
 
-    volumeDown = (volume) => {
-        if (this.volume - volume >= 0) {
-            this.volume -= volume
-        } else {
-            this.volume = 0
+    channelUp = (up) => {
+      if (up) {
+        if (this.channel < 50) {
+          return this.channel+= this.channel
         }
-        
-    }
-    channelUp = (channel) => {
-        if (this.channel + channel >= 50) {
-            this.channel -= channel;
-        } else if (this.channel - channel < 0) {
-            this.channel += channel;
-        } else {
-
-        }
-            
+      } else if (this.channel > 0) {
+        return  this.channel-= this.channel
+      }
     }     
 }
 const television = new Tv("phillips")
 // console.log(television);
 // console.log(television.volumeFunc(true));
+console.log(television.channelUp(false));
